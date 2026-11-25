@@ -1,20 +1,27 @@
+
 import Link from 'next/link';
 
 const features = [
   {
     title: 'Next-Gen Performance',
-    description: 'Powered by the latest multi-core processors to handle heavy multitasking, coding, and rendering without breaking a sweat.',
-    badge: 'Speed',
+    description:
+      'Powered by powerful multi-core processors to handle heavy multitasking, coding, and rendering with ease.',
+    badge: 'Performance',
+    number: '01',
   },
   {
     title: 'All-Day Battery Life',
-    description: 'Up to 18 hours of real-world usage on a single charge, paired with rapid USB-C fast charging.',
+    description:
+      'Stay productive for longer with reliable battery performance and convenient USB-C fast charging.',
     badge: 'Endurance',
+    number: '02',
   },
   {
     title: 'Ultra-Crisp Display',
-    description: '120Hz anti-glare IPS panel with 100% sRGB color accuracy and razor-thin bezels for immersive work and play.',
+    description:
+      'Enjoy immersive visuals, vibrant colors, and smooth display performance for work and entertainment.',
     badge: 'Visuals',
+    number: '03',
   },
 ];
 
@@ -25,6 +32,7 @@ const lineup = [
     specs: '16GB RAM • 512GB NVMe SSD • 1.2 kg',
     price: '$899',
     highlight: false,
+    image: '/img/1.jpg',
   },
   {
     name: 'ProBook 16 Max',
@@ -32,6 +40,7 @@ const lineup = [
     specs: '32GB RAM • 1TB NVMe SSD • Dedicated GPU',
     price: '$1,499',
     highlight: true,
+    image: '/img/2.jpg',
   },
   {
     name: 'FlexBook 360',
@@ -39,43 +48,76 @@ const lineup = [
     specs: '16GB RAM • 512GB SSD • Stylus Included',
     price: '$1,049',
     highlight: false,
+    image: '/img/3.jpg',
   },
 ];
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-slate-50 text-slate-900">
-  
-      {/* Hero Section */}
-      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:flex lg:items-center lg:justify-between lg:gap-12 lg:py-24 lg:px-8">
-        <div className="max-w-xl">
-          <span className="inline-block rounded-full bg-indigo-100 px-3 py-1 text-xs font-semibold tracking-wide text-indigo-700 uppercase">
-            2026 Edition Available Now
-          </span>
-          <h1 className="mt-4 text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
-            Power Meets Pure Portability.
-          </h1>
-          <p className="mt-4 text-lg leading-relaxed text-slate-600">
-            Engineered with an aerospace-grade aluminum chassis, silent thermal cooling, and a display that brings every pixel to life.
-          </p>
-          <div className="mt-8 flex flex-wrap items-center gap-4">
-            <Link
-              href="#lineup"
-              className="rounded-full bg-indigo-600 px-6 py-3 text-sm font-semibold text-white shadow-md transition-all hover:bg-indigo-700 hover:shadow-lg"
-            >
-              Explore Models
-            </Link>
-            <Link
-              href="/about"
-              className="rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-100"
-            >
-              Learn More
-            </Link>
-          </div>
-        </div>
+    <main className="overflow-hidden bg-slate-50 text-slate-900">
 
-        {/* CSS-Only Sleek Laptop Mockup */}
-        <div className="mt-12 w-full max-w-lg lg:mt-0">
+      {/* HERO SECTION */}
+      <section className="relative">
+        <div className="pointer-events-none absolute -right-40 -top-20 h-96 w-96 rounded-full bg-indigo-200/40 blur-3xl" />
+        <div className="pointer-events-none absolute -left-40 bottom-0 h-80 w-80 rounded-full bg-blue-100/50 blur-3xl" />
+
+        <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:px-8 lg:py-28">
+
+          {/* HERO CONTENT */}
+          <div>
+            <span className="inline-flex items-center gap-2 rounded-full border border-indigo-100 bg-indigo-50 px-4 py-2 text-xs font-bold uppercase tracking-widest text-indigo-700">
+              <span className="h-2 w-2 rounded-full bg-indigo-600" />
+              2026 Edition Available Now
+            </span>
+
+            <h1 className="mt-7 text-4xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
+              Power Meets
+              <span className="block bg-gradient-to-r from-indigo-600 via-blue-600 to-indigo-500 bg-clip-text text-transparent">
+                Pure Portability.
+              </span>
+            </h1>
+
+            <p className="mt-6 max-w-lg text-base leading-8 text-slate-600 sm:text-lg">
+              Experience the perfect balance of performance, portability,
+              and reliability. Discover laptops designed to power your
+              <span className="font-semibold text-indigo-600"> everyday ambitions.</span>
+            </p>
+
+            <div className="mt-9 flex flex-wrap items-center gap-4">
+              <Link
+                href="#lineup"
+                className="rounded-full bg-indigo-600 px-8 py-3.5 text-sm font-bold text-white shadow-lg shadow-indigo-200 transition-all hover:-translate-y-1 hover:bg-indigo-700 hover:shadow-indigo-300"
+              >
+                Explore Models →
+              </Link>
+
+              <Link
+                href="/about"
+                className="rounded-full border border-slate-200 bg-white px-8 py-3.5 text-sm font-bold text-slate-700 shadow-sm transition-all hover:border-indigo-200 hover:text-indigo-600"
+              >
+                Discover Our Story
+              </Link>
+            </div>
+
+            {/* TRUST POINTS */}
+            <div className="mt-10 flex flex-wrap gap-x-7 gap-y-4 text-sm font-medium text-slate-600">
+              <span className="flex items-center gap-2">
+                <span className="font-bold text-indigo-600">✓</span>
+                Quality Tested
+              </span>
+              <span className="flex items-center gap-2">
+                <span className="font-bold text-indigo-600">✓</span>
+                2-Year Warranty
+              </span>
+              <span className="flex items-center gap-2">
+                <span className="font-bold text-indigo-600">✓</span>
+                Local Support
+              </span>
+            </div>
+          </div>
+
+          {/* HERO IMAGE */}
+          <div className="mt-12 w-full max-w-lg lg:mt-0">
           <div className="mx-auto aspect-[16/10] w-11/12 rounded-t-2xl border-[6px] border-slate-800 bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 p-6 shadow-2xl flex flex-col justify-between">
             <div className="flex items-center gap-1.5">
               <span className="h-2.5 w-2.5 rounded-full bg-rose-500"></span>
@@ -94,90 +136,208 @@ export default function HomePage() {
             <div className="mx-auto h-1.5 w-20 rounded-b-md bg-slate-500/50"></div>
           </div>
         </div>
+        </div>
       </section>
 
-      {/* Key Features Section */}
-      <section className="border-y border-slate-200/80 bg-white py-16">
+
+      {/* FEATURES SECTION */}
+      <section className="border-y border-slate-200/80 bg-white py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h2 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
-              Built for Everything You Do
+
+          <div className="mx-auto max-w-2xl text-center">
+            <span className="rounded-full bg-indigo-50 px-4 py-2 text-xs font-bold uppercase tracking-widest text-indigo-700">
+              What Makes Us Different
+            </span>
+
+            <h2 className="mt-6 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+              Built for Everything
+              <span className="block bg-gradient-to-r from-indigo-600 to-blue-500 bg-clip-text text-transparent">
+                You Do.
+              </span>
             </h2>
-            <p className="mt-2 text-slate-600">
-              No compromises between battery life, weight, and raw speed.
+
+            <p className="mt-4 leading-7 text-slate-500">
+              No compromises between battery life, portability, and
+              performance. Technology that keeps up with you.
             </p>
           </div>
 
-          <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-14 grid gap-6 md:grid-cols-3">
+
             {features.map((item) => (
               <div
                 key={item.title}
-                className="rounded-2xl border border-slate-200/80 bg-slate-50/50 p-6 transition-all hover:border-indigo-200 hover:bg-white hover:shadow-md"
+                className="group rounded-2xl border border-slate-200 bg-slate-50 p-7 transition-all duration-300 hover:-translate-y-2 hover:border-indigo-200 hover:bg-white hover:shadow-xl hover:shadow-indigo-100/50"
               >
-                <span className="inline-block rounded-md bg-indigo-50 px-2.5 py-1 text-xs font-semibold text-indigo-600">
-                  {item.badge}
-                </span>
-                <h3 className="mt-4 text-lg font-bold text-slate-900">{item.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate-600">{item.description}</p>
+                <div className="flex items-center justify-between">
+                  <span className="rounded-lg bg-indigo-100 px-3 py-2 text-xs font-bold text-indigo-700">
+                    {item.badge}
+                  </span>
+                  <span className="text-sm font-extrabold text-indigo-200 transition-colors group-hover:text-indigo-600">
+                    {item.number}
+                  </span>
+                </div>
+
+                <h3 className="mt-7 text-xl font-bold text-slate-900 transition-colors group-hover:text-indigo-600">
+                  {item.title}
+                </h3>
+
+                <p className="mt-3 text-sm leading-7 text-slate-600">
+                  {item.description}
+                </p>
+
+                <div className="mt-7 h-1 w-10 rounded-full bg-indigo-600 transition-all duration-300 group-hover:w-20" />
               </div>
             ))}
+
           </div>
         </div>
       </section>
 
-      {/* Laptop Lineup / Pricing Section */}
-      <section id="lineup" className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <h2 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
-            Choose Your Machine
-          </h2>
-          <p className="mt-2 text-slate-600">
-            Available in Space Gray and Silver with a 2-year warranty.
-          </p>
+
+      {/* LAPTOP LINEUP */}
+      <section
+        id="lineup"
+        className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8"
+      >
+
+        <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+
+          <div>
+            <span className="rounded-full bg-indigo-50 px-4 py-2 text-xs font-bold uppercase tracking-widest text-indigo-700">
+              Our Collection
+            </span>
+
+            <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+              Find Your Perfect
+              <span className="block bg-gradient-to-r from-indigo-600 to-blue-500 bg-clip-text text-transparent">
+                Machine.
+              </span>
+            </h2>
+
+            <p className="mt-3 max-w-xl text-sm leading-7 text-slate-500">
+              Discover machines designed for every workflow, from everyday
+              productivity to demanding professional tasks.
+            </p>
+          </div>
+
+          <Link
+            href="/about"
+            className="text-sm font-bold text-indigo-600 transition-colors hover:text-indigo-800"
+          >
+            Learn About Us →
+          </Link>
+
         </div>
 
-        <div className="mt-12 grid gap-8 lg:grid-cols-3">
+        <div className="mt-12 grid items-stretch gap-7 lg:grid-cols-3">
+
           {lineup.map((laptop) => (
             <div
               key={laptop.name}
-              className={`flex flex-col justify-between rounded-2xl p-8 transition-all ${
+              className={`group relative flex flex-col overflow-hidden rounded-3xl transition-all duration-300 hover:-translate-y-2 ${
                 laptop.highlight
-                  ? 'border-2 border-indigo-600 bg-white shadow-xl'
-                  : 'border border-slate-200 bg-white shadow-sm hover:shadow-md'
+                  ? 'border-2 border-indigo-500 bg-white shadow-xl shadow-indigo-100'
+                  : 'border border-slate-200 bg-white shadow-sm hover:border-indigo-200 hover:shadow-xl hover:shadow-indigo-100/50'
               }`}
             >
-              <div>
-                <div className="flex items-center justify-between">
-                  <h3 className="text-xl font-bold text-slate-900">{laptop.name}</h3>
-                  {laptop.highlight && (
-                    <span className="rounded-full bg-indigo-600 px-3 py-0.5 text-xs font-semibold text-white">
-                      Best Seller
-                    </span>
-                  )}
+
+              {laptop.highlight && (
+                <div className="absolute right-4 top-4 z-10 rounded-full bg-indigo-600 px-4 py-1.5 text-xs font-bold text-white shadow-lg">
+                  Best Seller
                 </div>
-                <p className="mt-2 text-sm text-slate-500">{laptop.tagline}</p>
-                <p className="mt-6 text-3xl font-extrabold text-slate-900">{laptop.price}</p>
-                <p className="mt-4 rounded-lg bg-slate-100 px-3 py-2 text-xs font-medium text-slate-700">
-                  {laptop.specs}
-                </p>
+              )}
+
+              {/* PRODUCT IMAGE */}
+              <div className="overflow-hidden bg-slate-100 p-5">
+                <img
+                  src={laptop.image}
+                  alt={laptop.name}
+                  className="h-52 w-full rounded-2xl object-cover transition-transform duration-500 group-hover:scale-105"
+                />
               </div>
 
-              <button
-                type="button"
-                className={`mt-8 w-full rounded-full py-2.5 text-sm font-semibold transition-colors ${
-                  laptop.highlight
-                    ? 'bg-indigo-600 text-white hover:bg-indigo-700'
-                    : 'bg-slate-900 text-white hover:bg-indigo-600'
-                }`}
-              >
-                Select {laptop.name}
-              </button>
+              <div className="flex flex-1 flex-col justify-between p-7">
+
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-widest text-indigo-600">
+                    Karobaar Collection
+                  </p>
+
+                  <h3 className="mt-3 text-2xl font-extrabold text-slate-900">
+                    {laptop.name}
+                  </h3>
+
+                  <p className="mt-2 text-sm leading-relaxed text-slate-500">
+                    {laptop.tagline}
+                  </p>
+
+                  <div className="mt-6 flex items-center gap-2">
+                    <span className="text-3xl font-extrabold text-indigo-600">
+                      {laptop.price}
+                    </span>
+                  </div>
+
+                  <p className="mt-5 rounded-xl border border-slate-100 bg-slate-50 px-4 py-3 text-xs font-medium leading-6 text-slate-600">
+                    {laptop.specs}
+                  </p>
+                </div>
+
+                <button
+                  type="button"
+                  className={`mt-7 w-full rounded-full py-3.5 text-sm font-bold transition-all ${
+                    laptop.highlight
+                      ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-200 hover:bg-indigo-700'
+                      : 'bg-slate-900 text-white hover:bg-indigo-600'
+                  }`}
+                >
+                  Select {laptop.name} →
+                </button>
+
+              </div>
             </div>
           ))}
+
         </div>
       </section>
 
-      
+
+      {/* FINAL CTA */}
+      <section className="mx-auto max-w-6xl px-4 pb-24 sm:px-6 lg:px-8">
+
+        <div className="relative overflow-hidden rounded-3xl bg-slate-950 px-6 py-16 text-center shadow-2xl sm:px-12">
+
+          <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-indigo-600/30 blur-3xl" />
+          <div className="absolute -bottom-20 -left-20 h-72 w-72 rounded-full bg-blue-600/20 blur-3xl" />
+
+          <div className="relative z-10">
+            <span className="rounded-full border border-indigo-400/30 bg-indigo-500/20 px-4 py-2 text-xs font-bold uppercase tracking-widest text-indigo-200">
+              Your Next Upgrade Starts Here
+            </span>
+
+            <h2 className="mx-auto mt-7 max-w-2xl text-3xl font-extrabold text-white sm:text-4xl">
+              Ready to Upgrade Your
+              <span className="block bg-gradient-to-r from-indigo-300 to-blue-300 bg-clip-text text-transparent">
+                Everyday Experience?
+              </span>
+            </h2>
+
+            <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-slate-300 sm:text-base">
+              Find the right laptop for your work, creativity, and everyday
+              ambitions.
+            </p>
+
+            <Link
+              href="#lineup"
+              className="mt-9 inline-flex rounded-full bg-indigo-600 px-8 py-3.5 text-sm font-bold text-white shadow-lg shadow-indigo-950/40 transition-all hover:-translate-y-1 hover:bg-indigo-500"
+            >
+              Explore Our Collection →
+            </Link>
+          </div>
+
+        </div>
+      </section>
+
     </main>
   );
 }

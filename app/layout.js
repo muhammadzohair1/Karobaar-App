@@ -29,10 +29,10 @@ export default function RootLayout({ children }) {
             {/* Brand / Logo */}
             <Link href="/" className="group flex items-center gap-2">
               <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-indigo-600 font-bold text-white shadow-sm transition-transform duration-200 group-hover:scale-105">
-                M
+                Z
               </div>
               <h1 className="bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-xl font-extrabold tracking-tight text-transparent">
-                My Website
+                Zohair
               </h1>
             </Link>
 
